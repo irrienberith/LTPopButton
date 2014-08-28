@@ -26,7 +26,7 @@
 }
 
 - (IBAction)changeButtonType:(UIButton *)sender {
-    [self.button animateToType:menuType];
+    [self.button animateToType:sender.tag];
 
 }
 
