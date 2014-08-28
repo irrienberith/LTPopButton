@@ -113,26 +113,27 @@
         case backType:
             
             [self rotateLayer:self.topLayer to:-M_PI_4];
-            [self moveLayer:self.topLayer to:CGPointMake(CGRectGetMidX(self.bounds)/2+lineHeight/2, CGRectGetMidY(self.bounds)/2-lineHeight)];
-            [self resizeLayer:self.topLayer to:CGRectMake(0, 0, CGRectGetWidth(self.bounds)*1.414/2, lineHeight)];
+            [self moveLayer:self.topLayer to:CGPointMake(CGRectGetWidth(self.bounds)/4-lineHeight, CGRectGetHeight(self.bounds)/4+lineHeight/2)];
+            [self resizeLayer:self.topLayer to:CGRectMake(0, 0, CGRectGetWidth(self.bounds)/2, lineHeight)];
             
             [self fadeLayer:self.middleLayer to:1];
             
-            [self moveLayer:self.bottomLayer to:CGPointMake(CGRectGetMidX(self.bounds)/2+lineHeight/2, CGRectGetHeight(self.bounds)-  CGRectGetMidY(self.bounds)/2+lineHeight)];
             [self rotateLayer:self.bottomLayer to:M_PI_4];
-            [self resizeLayer:self.bottomLayer to:CGRectMake(0, 0, CGRectGetWidth(self.bounds)*1.414/2, lineHeight)];
+            [self resizeLayer:self.bottomLayer to:CGRectMake(0, 0, CGRectGetWidth(self.bounds)/2, lineHeight)];
+            [self moveLayer:self.bottomLayer to:CGPointMake(CGRectGetWidth(self.bounds)/4-lineHeight, CGRectGetHeight(self.bounds)/4*3-lineHeight/2)];
+
             break;
 
         case forwardType:
             [self rotateLayer:self.topLayer to:M_PI_4];
-            [self moveLayer:self.topLayer to:CGPointMake(CGRectGetMidX(self.bounds)/2*3-lineHeight/2, CGRectGetMidY(self.bounds)/2-lineHeight)];
-            [self resizeLayer:self.topLayer to:CGRectMake(0, 0, CGRectGetWidth(self.bounds)*1.414/2, lineHeight)];
+            [self moveLayer:self.topLayer to:CGPointMake(CGRectGetWidth(self.bounds)/4*3+lineHeight, CGRectGetHeight(self.bounds)/4+lineHeight/2)];
+            [self resizeLayer:self.topLayer to:CGRectMake(0, 0, CGRectGetWidth(self.bounds)/2, lineHeight)];
             
             [self fadeLayer:self.middleLayer to:1];
             
-            [self moveLayer:self.bottomLayer to:CGPointMake(CGRectGetMidX(self.bounds)/2*3-lineHeight/2, CGRectGetHeight(self.bounds)-  CGRectGetMidY(self.bounds)/2+lineHeight)];
+            [self moveLayer:self.bottomLayer to:CGPointMake(CGRectGetWidth(self.bounds)/4*3+lineHeight, CGRectGetHeight(self.bounds)/4*3-lineHeight/2)];
             [self rotateLayer:self.bottomLayer to:-M_PI_4];
-            [self resizeLayer:self.bottomLayer to:CGRectMake(0, 0, CGRectGetWidth(self.bounds)*1.414/2, lineHeight)];
+            [self resizeLayer:self.bottomLayer to:CGRectMake(0, 0, CGRectGetWidth(self.bounds)/2, lineHeight)];
             break;
         default:
             break;
